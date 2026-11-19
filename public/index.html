@@ -12,13 +12,16 @@
 <body>
 <aside class="side">
   <div class="brand"><span class="logo"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></span><div><b>Clinic Dashboard</b><small>Patient records</small></div></div>
-  <nav><a class="on" href="#"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg>Dashboard</a><a href="#patients" onclick="document.getElementById('q').focus()"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>Patients</a></nav>
+  <nav>
+    <a class="on" href="#dashboard" data-view="dashboard"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg>Dashboard</a>
+    <a href="#patients" data-view="patients"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>Patients</a>
+  </nav>
   <p class="foot">Express.js + MySQL</p>
 </aside>
 
 <main>
   <header class="top">
-    <div><h1>Patient records</h1><p id="today"></p></div>
+    <div><h1 id="title">Patient records</h1><p id="today"></p></div>
     <button class="btn" id="addBtn">Add patient</button>
   </header>
 

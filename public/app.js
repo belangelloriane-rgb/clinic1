@@ -71,4 +71,13 @@ $('delYes').onclick = async () => {
 let timer;
 $('q').oninput = () => { clearTimeout(timer); timer = setTimeout(loadPatients, 250); };
 $('f').onchange = loadPatients;
+function setView(v) {
+  document.body.dataset.view = v;
+  document.querySelectorAll('nav a').forEach((a) => a.classList.toggle('on', a.dataset.view === v));
+  $('title').textContent = v === 'patients' ? 'All patients' : 'Patient records';
+  if (v === 'patients') $('q').focus();
+}
+document.querySelectorAll('nav a').forEach((a) => {
+  a.onclick = (e) => { e.preventDefault(); setView(a.dataset.view); };
+});
 refresh();
